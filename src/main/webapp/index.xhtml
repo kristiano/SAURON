@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:decorate template="/tema/index.xhtml">
+        
+
+        <ui:define name="centro" > 
+            <h:form id="form" prependId="false">
+                <p:tabView id="tabView">  
+
+                    <p:tab id="tab1" title="Detalhes do Servidor">  
+                        <h:panelGrid columns="2" cellpadding="10">  
+                                                        <h:outputText value="Nome: *" />  
+                                                       <p:inputText required="true" label="Firstname"  
+                                                               value="#{userWizard.user.firstname}" />  
+
+                                                       <h:outputText value="Sobrenome: *" />  
+                                                       <p:inputText required="true" label="Lastname"  
+                                                               value="#{userWizard.user.lastname}" />  
+
+                                                       <h:outputText value="Matricula: " />  
+                                                       <p:inputText value="#{userWizard.user.age}" />  
+                                                       <h:outputText value="Orgão: " />  
+                                                       <p:inputText value="#{userWizard.user.street}" /> 
+                        </h:panelGrid>  
+                    </p:tab>  
+
+                    <p:tab id="tab2" title="Documentação"> 
+                         <p:tabView id="teste">  
+                             
+                             <p:tab id="solicitacao" title="Solicitações">
+                                  <h:outputText value="Solicitações: " /> 
+                                  
+                                  <br/>
+                                  <p:separator/>
+                                  <p:selectOneRadio id="options" value="teste" layout="pageDirection">  
+                                        <f:selectItem itemLabel="Licença para tratamento de Saúde" itemValue="1" />  
+                                        <f:selectItem itemLabel="Licença por motivo de doença em pessoa da família" itemValue="2" />  
+                                        <f:selectItem itemLabel="Prorrogação de licenças médica" itemValue="3" />  
+                                        <f:selectItem itemLabel="Licença por motivo de gestação ou adoção" itemValue="4" /> 
+                                       
+                                 </p:selectOneRadio>  
+                                   
+                                          
+                             </p:tab>
+                             <p:tab id="docs" title="Documentos entregues">
+                                   <h:outputText value="Documentos Entregue: " />  
+                                   <br/>
+                                    <p:separator/>
+                                   <p:inputTextarea value="#{userWizard.user.postalCode}" rows="16" cols="50"/>  
+                             </p:tab>
+                             <p:tab id="docspend" title="Documentos Pendentes">
+                                   <h:outputText value="Documentos Pendentes: " />  
+                                   <br/>
+                                    <p:separator/>
+                                   <p:inputTextarea value="#{userWizard.user.postalCode}" rows="16" cols="50"/>  
+                             </p:tab>
+                             <p:tab id="docsobserv" title="Observações">
+                                    <h:outputText value="Observações: " />  
+                                    <br/>
+                                     <p:separator/>
+                                    <p:inputTextarea  value="#{userWizard.skip}" rows="16" cols="50"/>   
+                             </p:tab>
+                         </p:tabView>
+                        <p:commandButton value="Enviar Protocolo"/>
+                    </p:tab>  
+                </p:tabView>  
+            </h:form>
+        </ui:define>       
+    </ui:decorate>
+</html>

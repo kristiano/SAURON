@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:decorate template="/tema/padrao.xhtml">
+        <ui:define name="centro" >
+            
+             <h:form id="teste" prependId="false">
+                    <h:panelGrid columns="3"  cellpadding="5" id="meuPainel">                               
+                                
+                                
+                        <p:panel header="Detalhes do Servidor">  
+
+                          
+
+                            <h:panelGrid columns="2" columnClasses="label, value" styleClass="grid">  
+                                <h:outputText value="Nome: *" />  
+                                <p:inputText required="true" label="Firstname"  
+                                        value="#{userWizard.user.firstname}" />  
+
+                                <h:outputText value="Sobrenome: *" />  
+                                <p:inputText required="true" label="Lastname"  
+                                        value="#{userWizard.user.lastname}" />  
+
+                                <h:outputText value="Matricula: " />  
+                                <p:inputText value="#{userWizard.user.age}" />  
+                                <h:outputText value="Orgão: " />  
+                                <p:inputText value="#{userWizard.user.street}" />  
+                               
+                            </h:panelGrid>  
+                        </p:panel>  
+                          </h:panelGrid>
+                 
+                   <h:panelGrid columns="3"  cellpadding="5" > 
+                        <p:panel header="Documentos">  
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">  
+                                        <h:outputText value="Data de entrega: " />  
+                                        <p:calendar  />  
+                                        
+                                        <h:outputText value="Solicitações: " />  
+                                        <p:inputTextarea  value="#{userWizard.user.street}" />  
+
+                                        <h:outputText value="Documentos Entregue: " />  
+                                        <p:inputTextarea value="#{userWizard.user.postalCode}" />  
+
+                                        <h:outputText value="Documentos Pendentes: " />  
+                                        <p:inputTextarea  value="#{userWizard.user.city}" />  
+
+                                        <h:outputText value="Observações: " />  
+                                        <p:inputTextarea  value="#{userWizard.skip}" />  
+                                    </h:panelGrid>  
+                           
+                        </p:panel>  
+                     </h:panelGrid> 
+                 <p:commandButton value="Enviar"/>
+                 </h:form>
+        </ui:define>       
+    </ui:decorate>
+</html>
